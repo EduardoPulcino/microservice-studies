@@ -1,6 +1,6 @@
-package com.example.consumer01.config;
+package com.example.consumer02.config;
 
-import com.example.consumer01.record.OrderRecord;
+import com.example.consumer02.record.OrderRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +31,7 @@ public class KafkaConsumerConfig {
         props.put(ErrorHandlingDeserializer.KEY_DESERIALIZER_CLASS, JsonDeserializer.class);
         props.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class.getName());
         props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
-        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "com.example.consumer01.record.OrderRecord");
+        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "com.example.consumer02.record.OrderRecord");
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
